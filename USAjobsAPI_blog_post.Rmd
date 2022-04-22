@@ -1,6 +1,6 @@
 ---
 title: "I was looking for a job and then I found a job..."
-output: html_document
+output: md_document
 ---
 
 ```{r setup, include=FALSE}
