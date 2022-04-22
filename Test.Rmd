@@ -1,18 +1,19 @@
 ---
-title: "I was looking for a job and then I found a job..."
+title: "Test"
+author: "Stephen Formel"
+date: "4/21/2022"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-
 ```
 
-### What is this?
+## What is this?
 
-This is a shinyapp to return the results from multiple USAjobs.gov searches, and filter by opening application date.  Full code on [github](https://github.com/sformel/USAjobs_gov_combo_search) and example app below.
+This is a script to return the results from multiple USAjobs.gov searches, and filter by opening application date.
 
-### Why?
+## Why?
 
 Why would you want to do this?  Well, the [USAjobs.gov search](https://www.usajobs.gov/) is great, it allows you to search for multiple keywords, and [sort by opening application date](https://www.usajobs.gov/Help/how-to/search/sort/).  However, the only boolean operator it allows is an [implict "AND" between keywords](https://www.usajobs.gov/Help/how-to/search/keyword/).  There is no option for "OR" and "NOT".  At least as far as I can tell.
 
@@ -32,7 +33,7 @@ To be clear, it only returns each result once, even if it is returned by multipl
 
 Let me stress that this won't be very useful for random searching.  This is just an efficient way to view the same group of search results every day, so you can quickly catch any new postings that you might be interested in applying for, across all your searches of interest.  So get your ducks in a row by searching on the USAjobs.gov website, and then run this as frequently as you wish to see new results.
 
-### How to use?
+## How to use?
 
 1. Obtain an [API authorization key from USAjobs.gov](https://developer.usajobs.gov/APIRequest/Index).  It will look super official, and your imposter syndrome will well up inside you making you question whether or not you are qualified for an authorization key.  Swat those feelings away, and dsecribe your use as politely and succinctly as possible. Something like, "I will use the API to search for jobs for myself."
 1. Download this script (NEED A LINK) into a folder on your computer (you may need to install some of these libraries).
@@ -45,16 +46,15 @@ Let me stress that this won't be very useful for random searching.  This is just
 1. Click the Search Button.
 1. Look at results by clicking the panel "Search Results"
 
-### Limitations
+## Limitations
 
 1. The "days since job was posted" is strictly a calendar date, not 24 hours.
 1. This app depends on the USAjobs API, and if you ping it too many times in a short period, it will pout for a while and not return any results.  I could write in a sleep period into the app, but it wasn't necessary for my needs.
 1. This app is a nice  interface for someone who isn't very comfy with R, but it is actually even a little more efficient to hard code your keywords into the script.  And of course you can customize it to filter and display other data that you might be interested in.
 
 
-### Example Search Results and User Interface
+## Example Search Results and User Interface
 
-View app in full window [here](https://sformel.shinyapps.io/usajobs_search/).
 
 ```{r usajobs, echo=FALSE}
 
@@ -62,9 +62,9 @@ knitr::include_app("https://sformel.shinyapps.io/usajobs_search/")
 
 ```
 
-### Full Code
+## Full Code
 
-For those who are interested.  Other example code on [github](https://github.com/sformel/USAjobs_gov_combo_search).
+For those who are interested.
 
 ```{r code walkthrough, eval=FALSE}
 
